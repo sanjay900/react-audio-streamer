@@ -26,6 +26,8 @@ public class RNMemesModule extends ReactContextBaseJavaModule {
   @ReactMethod
   public void beginRecording() {
       Logger.getLogger("ReactNative").fine("recorded");
+      reactContext.getJSModule(DeviceEventManagerModule.RCTDeviceEventEmitter.class)
+              .emit("rec", "test");
       this.v = new Visualizer(0);
       this.v.setCaptureSize(Visualizer.getCaptureSizeRange()[1]);
       this.v.setDataCaptureListener(new Visualizer.OnDataCaptureListener() {
