@@ -44,6 +44,8 @@ public class RNMemesModule extends ReactContextBaseJavaModule {
 
           }
       },16000, true, false);
+
+      this.v.setEnabled(true);
   }
   @Override
   public String getName() {
