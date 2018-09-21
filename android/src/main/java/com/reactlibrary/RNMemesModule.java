@@ -25,7 +25,7 @@ public class RNMemesModule extends ReactContextBaseJavaModule {
   @ReactMethod
   public void beginRecording() {
       this.v = new Visualizer(0);
-      this.v.setCaptureSize(512);
+      this.v.setCaptureSize(Visualizer.getCaptureSizeRange()[1]);
       this.v.setDataCaptureListener(new Visualizer.OnDataCaptureListener() {
           @Override
           public void onWaveFormDataCapture(Visualizer visualizer, byte[] waveform, int samplingRate) {
