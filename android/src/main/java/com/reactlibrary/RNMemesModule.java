@@ -25,16 +25,12 @@ public class RNMemesModule extends ReactContextBaseJavaModule {
       }
   @ReactMethod
   public void beginRecording() {
-      Logger.getLogger("ReactNative").fine("recorded");
-      reactContext.getJSModule(DeviceEventManagerModule.RCTDeviceEventEmitter.class)
-              .emit("rec", "test");
       this.v = new Visualizer(0);
       this.v.setCaptureSize(Visualizer.getCaptureSizeRange()[1]);
       this.v.setDataCaptureListener(new Visualizer.OnDataCaptureListener() {
           @Override
           public void onWaveFormDataCapture(Visualizer visualizer, byte[] waveform, int samplingRate) {
               String data = Base64.encodeToString(waveform,0);
-              Logger.getLogger("ReactNative").fine("memes"+data);
               reactContext.getJSModule(DeviceEventManagerModule.RCTDeviceEventEmitter.class)
                       .emit("audio", data);
           }
