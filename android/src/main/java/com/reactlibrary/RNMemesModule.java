@@ -25,7 +25,7 @@ public class RNMemesModule extends ReactContextBaseJavaModule {
         @Override
         public void onWaveFormDataCapture(Visualizer visualizer, byte[] waveform, int samplingRate) {
             String data = Base64.encodeToString(waveform,0);
-            this.reactContext.getJSModule(DeviceEventManagerModule.RCTDeviceEventEmitter.class)
+            reactContext.getJSModule(DeviceEventManagerModule.RCTDeviceEventEmitter.class)
                     .emit("audio", data);
         }
 
