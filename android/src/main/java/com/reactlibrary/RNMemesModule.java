@@ -55,12 +55,16 @@ public class RNMemesModule extends ReactContextBaseJavaModule implements Lifecyc
     @Override
     public void onHostPause() {
         // Activity `onPause`
-        this.v.setEnabled(false);
+        if (this.v != null){
+            this.v.setEnabled(false);
+        }
     }
 
     @Override
     public void onHostDestroy() {
         // Activity `onDestroy`
-        this.v.setEnabled(false);
+        if (this.v != null){
+            this.v.setEnabled(false);
+        }
     }
 }
