@@ -16,7 +16,7 @@ public class RNMemesModule extends ReactContextBaseJavaModule {
   private final ReactApplicationContext reactContext;
   private final Visualizer v;
 
-  public RNMemesModule(ReactApplicationContext reactContext) {
+  public RNMemesModule(final ReactApplicationContext reactContext) {
     super(reactContext);
     this.reactContext = reactContext;
     this.v = new Visualizer(0);
